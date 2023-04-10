@@ -26,13 +26,18 @@ public class EmployeeController {
         return emp;
     }
 
-    @GetMapping("emp/{id}")
-    public Employee employeeVariable(@PathVariable("id") int employee_id){
-        return new Employee(employee_id,"pooja", "mandal");
-    }
+//    @GetMapping("emp/{id}")
+//    public Employee employeeVariable(@PathVariable("id") int employee_id){
+//        return new Employee(employee_id,"pooja", "mandal");
+//    }
 
 //    @GetMapping("emp/{id}")
 //    public Employee employeeVariable(@PathVariable int id){
 //        return new Employee(id,"pooja", "mandal");
 //  }
+
+    @GetMapping("emp/{id}/{firstname}/{lastname}")
+    public Employee employeeVariable(@PathVariable("id") int employee_id, @PathVariable("firstname") String first_name, @PathVariable("lastname") String last_name){
+        return new Employee(employee_id,first_name,last_name);
+    }
 }
