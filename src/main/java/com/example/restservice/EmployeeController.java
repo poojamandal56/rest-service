@@ -1,6 +1,7 @@
 package com.example.restservice;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -25,9 +26,13 @@ public class EmployeeController {
         return emp;
     }
 
-    @GetMapping("emp/id")
-
-    public Employee employeeVariable(int employee_id){
+    @GetMapping("emp/{id}")
+    public Employee employeeVariable(@PathVariable("id") int employee_id){
         return new Employee(employee_id,"pooja", "mandal");
     }
+
+//    @GetMapping("emp/{id}")
+//    public Employee employeeVariable(@PathVariable int id){
+//        return new Employee(id,"pooja", "mandal");
+//  }
 }
